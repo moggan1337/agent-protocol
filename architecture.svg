@@ -1,141 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f0f23"/>
-      <stop offset="100%" stop-color="#1a1a3e"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
     </linearGradient>
-    
-    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366f1"/>
+    <linearGradient id="primary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
       <stop offset="100%" stop-color="#8b5cf6"/>
     </linearGradient>
-    
-    <linearGradient id="secondaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="secondary" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#06b6d4"/>
       <stop offset="100%" stop-color="#3b82f6"/>
     </linearGradient>
-    
-    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#10b981"/>
       <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
-    
-    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#ef4444"/>
-    </linearGradient>
-    
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
   
-  <!-- Background -->
-  <rect width="800" height="600" fill="url(#bgGrad)"/>
+  <rect width="800" height="500" fill="url(#bg)"/>
   
   <!-- Title -->
-  <text x="400" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Agent Protocol Architecture</text>
+  <text x="400" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="20" font-weight="600">Architecture</text>
+  
+  <!-- Protocol Layer (Center) -->
+  <rect x="300" y="180" width="200" height="120" rx="12" fill="#1a1a2e" stroke="url(#primary)" stroke-width="2"/>
+  <text x="400" y="215" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="16" font-weight="600">AGENT PROTOCOL</text>
+  
+  <rect x="320" y="235" width="160" height="8" rx="4" fill="#1e293b"/>
+  <rect x="320" y="235" width="70" height="8" rx="4" fill="url(#primary)"/>
+  <text x="330" y="243" fill="#fff" font-family="system-ui" font-size="8">Messages</text>
+  
+  <rect x="320" y="250" width="160" height="8" rx="4" fill="#1e293b"/>
+  <rect x="320" y="250" width="90" height="8" rx="4" fill="url(#secondary)"/>
+  <text x="330" y="258" fill="#fff" font-family="system-ui" font-size="8">Capabilities</text>
+  
+  <rect x="320" y="265" width="160" height="8" rx="4" fill="#1e293b"/>
+  <rect x="320" y="265" width="60" height="8" rx="4" fill="url(#green)"/>
+  <text x="330" y="273" fill="#fff" font-family="system-ui" font-size="8">Routing</text>
   
   <!-- Agent A -->
-  <rect x="50" y="80" width="150" height="80" rx="10" fill="#1e293b" stroke="url(#primaryGrad)" stroke-width="2"/>
-  <text x="125" y="110" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Agent A</text>
-  <text x="125" y="130" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">OpenAI</text>
-  <circle cx="80" cy="100" r="8" fill="url(#primaryGrad)"/>
+  <rect x="60" y="100" width="140" height="70" rx="10" fill="#1a1a2e" stroke="#3b82f6" stroke-width="2"/>
+  <text x="130" y="130" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="500">Agent A</text>
+  <text x="130" y="150" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">OpenAI</text>
   
   <!-- Agent B -->
-  <rect x="50" y="200" width="150" height="80" rx="10" fill="#1e293b" stroke="url(#secondaryGrad)" stroke-width="2"/>
-  <text x="125" y="230" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Agent B</text>
-  <text x="125" y="250" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Anthropic</text>
-  <circle cx="80" cy="220" r="8" fill="url(#secondaryGrad)"/>
+  <rect x="60" y="210" width="140" height="70" rx="10" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="130" y="240" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="500">Agent B</text>
+  <text x="130" y="260" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">Anthropic</text>
   
   <!-- Agent C -->
-  <rect x="50" y="320" width="150" height="80" rx="10" fill="#1e293b" stroke="url(#greenGrad)" stroke-width="2"/>
-  <text x="125" y="350" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Agent C</text>
-  <text x="125" y="370" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Custom</text>
-  <circle cx="80" cy="340" r="8" fill="url(#greenGrad)"/>
+  <rect x="60" y="320" width="140" height="70" rx="10" fill="#1a1a2e" stroke="#10b981" stroke-width="2"/>
+  <text x="130" y="350" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="500">Agent C</text>
+  <text x="130" y="370" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">Custom</text>
   
-  <!-- Protocol Layer -->
-  <rect x="250" y="180" width="300" height="160" rx="15" fill="#0f172a" stroke="url(#primaryGrad)" stroke-width="3" filter="url(#glow)"/>
-  <text x="400" y="210" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">AGENT PROTOCOL</text>
+  <!-- Connections to Protocol -->
+  <path d="M200 135 L300 220" stroke="#3b82f6" stroke-width="2" fill="none"/>
+  <path d="M200 245 L300 240" stroke="#8b5cf6" stroke-width="2" fill="none"/>
+  <path d="M200 355 L300 260" stroke="#10b981" stroke-width="2" fill="none"/>
   
-  <!-- Protocol Components -->
-  <rect x="270" y="230" width="260" height="25" rx="5" fill="#1e293b"/>
-  <rect x="270" y="230" width="80" height="25" rx="5" fill="url(#primaryGrad)"/>
-  <text x="310" y="247" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Messages</text>
+  <!-- Return connections -->
+  <path d="M500 220 L600 135" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" fill="none"/>
+  <path d="M500 240 L600 245" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4,4" fill="none"/>
+  <path d="M500 260 L600 355" stroke="#10b981" stroke-width="2" stroke-dasharray="4,4" fill="none"/>
   
-  <rect x="270" y="260" width="260" height="25" rx="5" fill="#1e293b"/>
-  <rect x="270" y="260" width="100" height="25" rx="5" fill="url(#secondaryGrad)"/>
-  <text x="320" y="277" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Capabilities</text>
+  <!-- External Services -->
+  <rect x="600" y="100" width="150" height="70" rx="10" fill="#1a1a2e" stroke="#64748b" stroke-width="2"/>
+  <text x="675" y="130" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="500">Registry</text>
+  <text x="675" y="150" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">Service Discovery</text>
   
-  <rect x="270" y="290" width="260" height="25" rx="5" fill="#1e293b"/>
-  <rect x="270" y="290" width="90" height="25" rx="5" fill="url(#greenGrad)"/>
-  <text x="315" y="307" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Discovery</text>
+  <rect x="600" y="210" width="150" height="70" rx="10" fill="#1a1a2e" stroke="#64748b" stroke-width="2"/>
+  <text x="675" y="240" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="500">Transport</text>
+  <text x="675" y="260" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">HTTP / WS / Memory</text>
   
-  <rect x="270" y="320" width="260" height="25" rx="5" fill="#1e293b"/>
-  <rect x="270" y="320" width="70" height="25" rx="5" fill="url(#orangeGrad)"/>
-  <text x="305" y="337" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Routing</text>
+  <!-- Transport Layer -->
+  <rect x="300" y="350" width="200" height="60" rx="10" fill="#1a1a2e" stroke="#475569" stroke-width="1"/>
+  <text x="400" y="380" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">Transport Layer</text>
   
-  <!-- Connection lines -->
-  <path d="M200 120 L250 220" stroke="url(#primaryGrad)" stroke-width="2" fill="none"/>
-  <circle cx="225" cy="170" r="5" fill="url(#primaryGrad)"/>
+  <rect x="320" y="390" width="60" height="20" rx="5" fill="#1a1a2e" stroke="#3b82f6" stroke-width="1"/>
+  <text x="350" y="404" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="9">HTTP</text>
   
-  <path d="M200 240 L250 260" stroke="url(#secondaryGrad)" stroke-width="2" fill="none"/>
-  <circle cx="225" cy="250" r="5" fill="url(#secondaryGrad)"/>
+  <rect x="395" y="390" width="60" height="20" rx="5" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="425" y="404" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="9">WebSocket</text>
   
-  <path d="M200 360 L250 280" stroke="url(#greenGrad)" stroke-width="2" fill="none"/>
-  <circle cx="225" cy="320" r="5" fill="url(#greenGrad)"/>
+  <rect x="470" y="390" width="60" height="20" rx="5" fill="#1a1a2e" stroke="#10b981" stroke-width="1"/>
+  <text x="500" y="404" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="9">Memory</text>
   
-  <!-- Return lines -->
-  <path d="M550 220 L600 140" stroke="url(#primaryGrad)" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
-  <path d="M550 260 L600 240" stroke="url(#secondaryGrad)" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
-  <path d="M550 280 L600 360" stroke="url(#greenGrad)" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <!-- Arrow to transport -->
+  <path d="M400 300 L400 350" stroke="#475569" stroke-width="2" fill="none"/>
+  <polygon points="395,295 405,295 400,305" fill="#475569"/>
   
-  <!-- External Service -->
-  <rect x="600" y="180" width="150" height="100" rx="10" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
-  <text x="675" y="210" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Registry</text>
-  <text x="675" y="235" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Service Discovery</text>
-  
-  <!-- Arrow to registry -->
-  <path d="M550 230 L600 230" stroke="#64748b" stroke-width="2" fill="none"/>
-  <polygon points="595,225 605,230 595,235" fill="#64748b"/>
-  
-  <!-- Transport layer -->
-  <rect x="250" y="380" width="300" height="80" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
-  <text x="400" y="410" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12">Transport Layer</text>
-  
-  <rect x="270" y="420" width="80" height="30" rx="5" fill="#1e293b" stroke="url(#primaryGrad)" stroke-width="1"/>
-  <text x="310" y="440" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">HTTP</text>
-  
-  <rect x="360" y="420" width="80" height="30" rx="5" fill="#1e293b" stroke="url(#secondaryGrad)" stroke-width="1"/>
-  <text x="400" y="440" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">WebSocket</text>
-  
-  <rect x="450" y="420" width="80" height="30" rx="5" fill="#1e293b" stroke="url(#greenGrad)" stroke-width="1"/>
-  <text x="490" y="440" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10">Memory</text>
-  
-  <!-- Connection to protocol -->
-  <path d="M400 340 L400 380" stroke="#64748b" stroke-width="2" fill="none"/>
-  <polygon points="395,335 405,335 400,345" fill="#64748b"/>
-  
-  <!-- Features list -->
-  <rect x="600" y="300" width="180" height="150" rx="10" fill="#1e293b"/>
-  <text x="690" y="330" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Features</text>
-  
-  <circle cx="615" cy="355" r="4" fill="#10b981"/>
-  <text x="625" y="358" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Universal Messages</text>
-  
-  <circle cx="615" cy="380" r="4" fill="#06b6d4"/>
-  <text x="625" y="383" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Capability Discovery</text>
-  
-  <circle cx="615" cy="405" r="4" fill="#f59e0b"/>
-  <text x="625" y="408" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Smart Routing</text>
-  
-  <circle cx="615" cy="430" r="4" fill="#a855f7"/>
-  <text x="625" y="433" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Load Balancing</text>
-  
-  <!-- Bottom label -->
-  <text x="400" y="560" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">Like TCP/IP for AI Agents</text>
+  <!-- Footer -->
+  <text x="400" y="480" text-anchor="middle" fill="#475569" font-family="system-ui" font-size="12">Like TCP/IP for AI Agents</text>
 </svg>
