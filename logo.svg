@@ -1,57 +1,117 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0f23"/>
+      <stop offset="100%" stop-color="#1a1a3e"/>
     </linearGradient>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#a855f7"/>
     </linearGradient>
+    
+    <linearGradient id="secondaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   
-  <!-- Background circle -->
-  <circle cx="200" cy="200" r="180" fill="url(#grad1)" opacity="0.1"/>
-  <circle cx="200" cy="200" r="150" fill="url(#grad1)" opacity="0.15"/>
+  <!-- Background -->
+  <rect width="512" height="512" fill="url(#bgGrad)" rx="32"/>
   
-  <!-- Network nodes -->
-  <!-- Center node -->
-  <circle cx="200" cy="200" r="40" fill="url(#grad1)"/>
-  <circle cx="200" cy="200" r="30" fill="white" opacity="0.9"/>
-  <text x="200" y="205" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6366F1" text-anchor="middle">AP</text>
+  <!-- Outer ring -->
+  <circle cx="256" cy="220" r="140" fill="none" stroke="url(#primaryGrad)" stroke-width="2" opacity="0.3"/>
+  <circle cx="256" cy="220" r="160" fill="none" stroke="url(#primaryGrad)" stroke-width="1" opacity="0.15"/>
   
-  <!-- Outer nodes -->
-  <circle cx="200" cy="60" r="25" fill="url(#grad2)"/>
-  <circle cx="325" cy="140" r="25" fill="url(#grad2)"/>
-  <circle cx="325" cy="260" r="25" fill="url(#grad2)"/>
-  <circle cx="200" cy="340" r="25" fill="url(#grad2)"/>
-  <circle cx="75" cy="260" r="25" fill="url(#grad2)"/>
-  <circle cx="75" cy="140" r="25" fill="url(#grad2)"/>
+  <!-- Connection arcs -->
+  <path d="M256 80 A140 140 0 0 1 396 220" fill="none" stroke="url(#secondaryGrad)" stroke-width="2" opacity="0.5"/>
+  <path d="M396 220 A140 140 0 0 1 256 360" fill="none" stroke="url(#accentGrad)" stroke-width="2" opacity="0.5"/>
+  <path d="M256 360 A140 140 0 0 1 116 220" fill="none" stroke="url(#primaryGrad)" stroke-width="2" opacity="0.5"/>
+  <path d="M116 220 A140 140 0 0 1 256 80" fill="none" stroke="url(#secondaryGrad)" stroke-width="2" opacity="0.5"/>
   
-  <!-- Node labels -->
-  <text x="200" y="55" font-family="Arial, sans-serif" font-size="10" fill="#8B5CF6" text-anchor="middle">Text</text>
-  <text x="335" y="140" font-family="Arial, sans-serif" font-size="10" fill="#8B5CF6" text-anchor="start">Image</text>
-  <text x="335" y="260" font-family="Arial, sans-serif" font-size="10" fill="#8B5CF6" text-anchor="start">Audio</text>
-  <text x="200" y="355" font-family="Arial, sans-serif" font-size="10" fill="#8B5CF6" text-anchor="middle">Code</text>
-  <text x="65" y="260" font-family="Arial, sans-serif" font-size="10" fill="#8B5CF6" text-anchor="end">Video</text>
-  <text x="65" y="140" font-family="Arial, sans-serif" font-size="10" fill="#8B5CF6" text-anchor="end">Data</text>
+  <!-- Dashed orbit -->
+  <circle cx="256" cy="220" r="180" fill="none" stroke="url(#primaryGrad)" stroke-width="1" stroke-dasharray="8 8" opacity="0.2"/>
   
-  <!-- Connection lines -->
-  <line x1="200" y1="160" x2="200" y2="85" stroke="#6366F1" stroke-width="2" opacity="0.5"/>
-  <line x1="235" y1="225" x2="300" y2="155" stroke="#6366F1" stroke-width="2" opacity="0.5"/>
-  <line x1="235" y1="225" x2="300" y2="245" stroke="#6366F1" stroke-width="2" opacity="0.5"/>
-  <line x1="200" y1="240" x2="200" y2="315" stroke="#6366F1" stroke-width="2" opacity="0.5"/>
-  <line x1="165" y1="225" x2="100" y2="245" stroke="#6366F1" stroke-width="2" opacity="0.5"/>
-  <line x1="165" y1="225" x2="100" y2="155" stroke="#6366F1" stroke-width="2" opacity="0.5"/>
+  <!-- Central hub -->
+  <circle cx="256" cy="220" r="50" fill="url(#primaryGrad)" filter="url(#glow)"/>
+  <circle cx="256" cy="220" r="40" fill="#0f0f23"/>
+  <circle cx="256" cy="220" r="35" fill="url(#primaryGrad)"/>
   
-  <!-- Outer ring connections -->
-  <path d="M 200 85 A 115 115 0 0 1 300 155" stroke="#8B5CF6" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4"/>
-  <path d="M 300 155 A 115 115 0 0 1 300 245" stroke="#8B5CF6" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4"/>
-  <path d="M 300 245 A 115 115 0 0 1 200 315" stroke="#8B5CF6" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4"/>
-  <path d="M 200 315 A 115 115 0 0 1 100 245" stroke="#8B5CF6" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4"/>
-  <path d="M 100 245 A 115 115 0 0 1 100 155" stroke="#8B5CF6" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4"/>
-  <path d="M 100 155 A 115 115 0 0 1 200 85" stroke="#8B5CF6" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4"/>
+  <!-- AP text -->
+  <text x="256" y="228" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">AP</text>
   
-  <!-- Protocol text -->
-  <text x="200" y="390" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#374151" text-anchor="middle">AGENT PROTOCOL</text>
+  <!-- Satellite nodes -->
+  <!-- Node 1: Top -->
+  <circle cx="256" cy="80" r="20" fill="url(#secondaryGrad)" filter="url(#softGlow)"/>
+  <circle cx="256" cy="80" r="15" fill="#0f0f23"/>
+  <circle cx="256" cy="80" r="12" fill="url(#secondaryGrad)"/>
+  <line x1="256" y1="95" x2="256" y2="170" stroke="url(#secondaryGrad)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Node 2: Top Right -->
+  <circle cx="396" cy="140" r="18" fill="url(#accentGrad)" filter="url(#softGlow)"/>
+  <circle cx="396" cy="140" r="14" fill="#0f0f23"/>
+  <circle cx="396" cy="140" r="10" fill="url(#accentGrad)"/>
+  <line x1="385" y1="155" x2="305" y2="200" stroke="url(#accentGrad)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Node 3: Bottom Right -->
+  <circle cx="396" cy="300" r="16" fill="url(#primaryGrad)" filter="url(#softGlow)"/>
+  <circle cx="396" cy="300" r="12" fill="#0f0f23"/>
+  <circle cx="396" cy="300" r="8" fill="url(#primaryGrad)"/>
+  <line x1="385" y1="290" x2="305" y2="250" stroke="url(#primaryGrad)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Node 4: Bottom -->
+  <circle cx="256" cy="360" r="22" fill="url(#accentGrad)" filter="url(#softGlow)"/>
+  <circle cx="256" cy="360" r="17" fill="#0f0f23"/>
+  <circle cx="256" cy="360" r="13" fill="url(#accentGrad)"/>
+  <line x1="256" y1="345" x2="256" y2="270" stroke="url(#accentGrad)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Node 5: Bottom Left -->
+  <circle cx="116" cy="300" r="16" fill="url(#secondaryGrad)" filter="url(#softGlow)"/>
+  <circle cx="116" cy="300" r="12" fill="#0f0f23"/>
+  <circle cx="116" cy="300" r="8" fill="url(#secondaryGrad)"/>
+  <line x1="127" y1="290" x2="207" y2="250" stroke="url(#secondaryGrad)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Node 6: Top Left -->
+  <circle cx="116" cy="140" r="18" fill="url(#primaryGrad)" filter="url(#softGlow)"/>
+  <circle cx="116" cy="140" r="14" fill="#0f0f23"/>
+  <circle cx="116" cy="140" r="10" fill="url(#primaryGrad)"/>
+  <line x1="127" y1="155" x2="207" y2="200" stroke="url(#primaryGrad)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Floating particles -->
+  <circle cx="180" cy="100" r="3" fill="#6366f1" opacity="0.6"/>
+  <circle cx="340" cy="380" r="4" fill="#10b981" opacity="0.6"/>
+  <circle cx="420" cy="220" r="3" fill="#06b6d4" opacity="0.6"/>
+  <circle cx="92" cy="220" r="3" fill="#a855f7" opacity="0.6"/>
+  <circle cx="200" cy="420" r="2" fill="#6366f1" opacity="0.5"/>
+  <circle cx="312" cy="92" r="2" fill="#10b981" opacity="0.5"/>
+  
+  <!-- Title -->
+  <text x="256" y="460" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="bold">AGENT PROTOCOL</text>
+  
+  <!-- Subtitle -->
+  <text x="256" y="485" text-anchor="middle" fill="#6366f1" font-family="Arial, sans-serif" font-size="12" letter-spacing="4">UNIVERSAL AGENT COMMUNICATION</text>
 </svg>
