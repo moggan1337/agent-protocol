@@ -1,5 +1,7 @@
 # Agent Protocol
 
+[![CI](https://github.com/moggan1337/agent-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/moggan1337/agent-protocol/actions/workflows/ci.yml)
+
 <p align="center">
   <img src="logo.svg" alt="Agent Protocol" width="300"/>
 </p>
@@ -25,6 +27,24 @@
 </p>
 
 ---
+
+## 🎬 Demo
+![Agent Protocol Demo](demo.gif)
+
+*Protocol handshake and message exchange in action*
+
+## Screenshots
+| Component | Preview |
+|-----------|---------|
+| Protocol Flow | ![flow](screenshots/flow.png) |
+| Message Schema | ![schema](screenshots/schema.png) |
+| Agent Registry | ![registry](screenshots/registry.png) |
+
+## Visual Description
+Demo shows agents discovering each other via protocol handshake, exchanging capabilities, and negotiating tasks. Message schemas render as structured JSON with syntax highlighting. Registry displays connected agents with supported operations.
+
+---
+
 
 ## 📋 Table of Contents
 
